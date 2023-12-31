@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex flex-row justify-content-between">
+      <h5>{{title}}</h5>
+      <div class="d-flex flex-column justify-content-center">
+        <p> Difficulty: {{difficulty}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-body text-center">
+    {{description}}
+  </div>
+  <div class="card-footer d-flex flex-row justify-content-between">
+    <button class="btn btn-outline-primary" type="button" (click)="filterPackage(title)" routerLink="/cards">Jouer</button>
+    <button class="btn btn-outline-danger" type="button" *ngIf="editMode" (click)="deletePackage()">
+      <i class="bi bi-plus"></i>
+    </button>
+  </div>
+</div>

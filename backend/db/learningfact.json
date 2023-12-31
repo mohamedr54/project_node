@@ -1,0 +1,14 @@
+[
+  {
+    "packageName": "anglais",
+    "recto": "Hello",
+    "verso": "Bonjour",
+    "id": "da243046-e014-4d3e-a344-6d0ef887a145"
+  },
+  {
+    "packageName": "orthographe",
+    "recto": "Dasso",
+    "verso": "Dassault",
+    "id": "99369c42-956d-4eed-b279-57bbc8a03121"
+  }
+]

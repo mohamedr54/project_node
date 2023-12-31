@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-title text-xl-start fw-bold p-3">
+    New flashcard
+  </div>
+  <div class="card-body">
+
+    <form id="flashCardForm" [formGroup]="flashCardForm" (ngSubmit)="submitForm(flashCardForm)">
+      <fieldset disabled>
+        <div class="form-group">
+          <div>
+            <label for="packageName">Package</label>
+            <input type="text" class="form-control" formControlName="packageName" id="packageName"
+                   placeholder="Ex: Anglais">
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <div>
+          <label for="recto">Question</label>
+          <input type="text" class="form-control" formControlName="recto" id="recto" placeholder="Ex: Hello">
+        </div>
+      </div>
+      <div class="form-group">
+        <div>
+          <label for="verso">Answer</label>
+          <input type="text" class="form-control" formControlName="verso" id="verso" placeholder="Ex: Bonjour">
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-end justify-content-end">
+        <button type="submit" class="btn btn-primary" [disabled]="flashCardForm.invalid">Submit</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="closeForm()">Close</button>
+      </div>
+
+    </form>
+  </div>
+</div>

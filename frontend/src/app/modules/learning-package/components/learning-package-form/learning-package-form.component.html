@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-title text-xl-start fw-bold p-3">
+    New package
+  </div>
+  <div class="card-body">
+
+    <form id="flashCardForm" [formGroup]="packageForm" (ngSubmit)="submitForm(packageForm)">
+      <div class="form-group">
+        <div>
+          <label for="title">Title</label>
+          <input type="text" class="form-control" formControlName="title" id="title" placeholder="Ex: Anglais">
+        </div>
+      </div>
+      <div class="form-group">
+        <div>
+          <label for="description">Description</label>
+          <input type="text" class="form-control" formControlName="description" id="description" placeholder="Ex: Mes cours d'anglais">
+        </div>
+      </div>
+      <div class="form-group">
+        <div>
+          <label for="category">Category</label>
+          <input type="text" class="form-control" formControlName="category" id="category" placeholder="Ex: Langues">
+        </div>
+      </div>
+      <div class="form-group">
+        <div>
+          <label for="difficulty">Difficulty</label>
+          <input type="text" class="form-control" formControlName="difficulty" id="difficulty" placeholder="Ex: 2">
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-end justify-content-end">
+        <button type="submit" class="btn btn-primary" [disabled]="packageForm.invalid">Submit</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="closeForm()">Close</button>
+      </div>
+
+    </form>
+  </div>
+</div>

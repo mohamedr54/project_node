@@ -1,0 +1,41 @@
+
+<div class="container-fluid">
+
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="edit" [(ngModel)]="editMode">
+    <label class="form-check-label" for="edit">Edit Mode</label>
+  </div>
+  <div class="row vh-100">
+    <div class="d-flex align-items-center justify-content-center flex-column" *ngIf="!editMode">
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-flashcard [isRecto]="isRecto" [currentCard]="currentCard"></app-flashcard>
+      </div>
+      <button class="btn btn-outline-primary" (click)="changeFace()" *ngIf="!showAnswer">Answer</button>
+      <div class="btn-group" role="group" aria-label="Confidence" *ngIf="showAnswer">
+        <button type="button" class="btn btn-primary text-white">Easy</button>
+        <button type="button" class="btn btn-primary text-white">Good</button>
+        <button type="button" class="btn btn-primary text-white">Hard</button>
+        <button type="button" class="btn btn-primary text-white">Again</button>
+      </div>
+
+      <button type="button" class="btn btn-outline-warning" *ngIf="showAnswer && currentCard < dataSourceLength - 1"
+              (click)="nextCard()">Next
+      </button>
+    </div>
+    <div *ngIf="editMode">
+      <button type="button" class="btn btn-primary" (click)="openModal()">
+        Create
+      </button>
+      <h1>Edit</h1>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4" *ngIf="editMode">
+      <app-flashcard-summary *ngFor="let card of dataSource" [recto]="card.recto" [packageName]="card.packageName" [verso]="card.verso" [id]="card.id"></app-flashcard-summary>
+    </div>
+  </div>
+
+</div>
+
+
+

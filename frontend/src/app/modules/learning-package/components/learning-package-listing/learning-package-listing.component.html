@@ -1,0 +1,18 @@
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="edit" [(ngModel)]="editMode">
+  <label class="form-check-label" for="edit">Edit Mode</label>
+</div>
+<div class="col-lg-4 debug">
+  <div *ngIf="editMode">
+    <button type="button" class="btn btn-primary" (click)="openModal()">
+      Create
+    </button>
+    <h1>Edit</h1>
+  </div>
+  <app-learning-package-summary *ngFor="let pack of dataSource" [title]="pack.title"
+                                [description]="pack.description" [category]="pack.category"
+                                [difficulty]="pack.difficulty" [editMode]="editMode" [id]="pack.id"></app-learning-package-summary>
+
+</div>
+
+
