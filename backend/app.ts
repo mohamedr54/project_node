@@ -1,4 +1,4 @@
-git basimport * as express from 'express';
+import * as express from 'express';
 import * as cors from 'cors'
 import {router as learninFactController} from "./src/LearningFact/learningFact.controller";
 import {router as learningPackageController} from "./src/LearningPackage/learningPackage.controller"
