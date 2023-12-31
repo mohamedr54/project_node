@@ -47,6 +47,7 @@ then type npm install bootstrap (we need it)
 
 
 29) We now need to launch the "front part"
+    
 31)open a NEW TERMINAL,  then use cd frontend
 32) then type npm run ng serve
     ![image](https://github.com/mohamedr54/project_node/assets/152565099/1aec61ab-ed24-49c4-89a0-d0ebf7aa6409)
